@@ -1,0 +1,16 @@
+book_filename: "A New Zealand Analysis of the Good Country Index"
+chapter_name: "Chapter "
+repo: https://thoughtfulbloke.github.io/eqnz
+output_dir: docs
+rmd_files: ["index.Rmd", "c001_Overall.Rmd", 
+"c010_SciTech.Rmd", "c011_st11.Rmd", "c012_st12.Rmd", "c013_st13.Rmd", 
+"c014_st14.Rmd", "c015_st15.Rmd", "c020_Culture.Rmd", "c021_cu21.Rmd", "c022_cu22.Rmd", 
+"c023_cu23.Rmd", "c024_cu24.Rmd", "c025_cu25.Rmd", "c030_Peace.Rmd", "c031_ps31.Rmd", 
+"c032_ps32.Rmd", "c033_ps33.Rmd", "c034_ps34.Rmd", "c035_ps35.Rmd", "c040_Order.Rmd", 
+"c041_wo41.Rmd", "c042_wo42.Rmd", "c043_wo43.Rmd", "c044_wo44.Rmd", "c045_wo45.Rmd", 
+"c050_Climate.Rmd", "c051_pc51.Rmd", "c052_pc52.Rmd", "c053_pc53.Rmd", "c054_pc54.Rmd", 
+"c055_pc55.Rmd", "c060_Prosperity.Rmd", "c061_pe61.Rmd", "c062_pe62.Rmd", "c063_pe63.Rmd", 
+"c064_pe64.Rmd", "c065_pe65.Rmd", "c070_Health.Rmd", "c071_hw71.Rmd", "c072_hw72.Rmd", 
+"c073_hw73.Rmd", "c074_hw74.Rmd", "c075_hw75.Rmd", "c090_rcite.Rmd"]
+clean: [packages.bib, bookdown.bbl]
+new_session: yes

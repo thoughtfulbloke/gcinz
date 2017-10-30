@@ -1,0 +1,52 @@
+```{r config, child="section_config.Rmd", message=FALSE, warning=FALSE, echo=FALSE}
+```
+
+```{r custom, echo=FALSE}
+var_code <- "pc53"
+var_meta <- metagci11[metagci11$code == var_code,]
+var_prettynom <- var_meta[,2]
+var_sides <- 5
+var_cciso <- "NZL"
+var_highlight <- "New Zealand"
+```
+
+## `r paste(var_meta[,2], var_meta[,1])`
+
+**From Good Country Source Descriptions**:
+
+**Description**: `r var_meta[,4]`
+
+**Source**: `r var_meta[,5]`
+
+**Treatment**: `r var_meta[,6]`
+
+**Neighbouring Countries**:
+
+```{r ranking, child="section_rank.Rmd", echo=FALSE}
+```
+
+`r neighbours`
+
+
+```{r maingraph, child="section_maingraph.Rmd", dpi=270, width=7, height=5, echo=FALSE}
+```
+
+**My Interpretation and Opinions**:
+
+Hazardous Pesticide exports is sinsitive to GDP per capita, as the range of GCI ranks narrows as wealth increases.
+
+New Zealand is the worst ranked wealthy country, and among the worst in the world. But living in an agricultural country with a fragile native environment and strong border controls stopping invasive species, most New Zealanders are going to question the idea producing presticides is immoral.
+
+While there is clearerly vast room for improving in this category, most New Zealander's would feel it is more ethical to gaurd the local environment. So my opinion is while we could improve here in GCI rankings, the sacrifice of species required would not reflect the spirit of the GCI.
+
+```{r child="section_config.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r custom, eval=FALSE, echo=TRUE}
+```
+
+```{r child="section_rank.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r child="section_maingraph.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```

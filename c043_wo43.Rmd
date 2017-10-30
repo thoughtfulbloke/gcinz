@@ -1,0 +1,55 @@
+```{r config, child="section_config.Rmd", message=FALSE, warning=FALSE, echo=FALSE}
+```
+
+```{r custom, echo=FALSE}
+var_code <- "wo43"
+var_meta <- metagci11[metagci11$code == var_code,]
+var_prettynom <- var_meta[,2]
+var_sides <- 5
+var_cciso <- "NZL"
+var_highlight <- "New Zealand"
+```
+
+## `r paste(var_meta[,2], var_meta[,1])`
+
+**From Good Country Source Descriptions**:
+
+**Description**: `r var_meta[,4]`
+
+**Source**: `r var_meta[,5]`
+
+**Treatment**: `r var_meta[,6]`
+
+**Neighbouring Countries**:
+
+```{r ranking, child="section_rank.Rmd", echo=FALSE}
+```
+
+`r neighbours`
+
+
+```{r maingraph, child="section_maingraph.Rmd", dpi=270, width=7, height=5, echo=FALSE}
+```
+
+**My Interpretation and Opinions**:
+
+Refugees Generated shows a relationship to GDP per capita, with the common pattern of wealthier countries in all the best ranks.
+
+New Zealand is in around the middle of the range for its GDP per capita, which may come as a shock to people not familiar with the raw data.
+
+New Zealanders may be surprised that the country generates refugees, but this is an artifact of the data collection. The origin of the refugee is the port previous to the country they claimed refugee status in, and the large proportion of New Zealand refugees to Australia is caused by people passing through New Zealand then seeking refugee status in Australia.
+
+There is not much New Zealand can do, as a country, to change our ranking here.
+
+
+```{r child="section_config.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r custom, eval=FALSE, echo=TRUE}
+```
+
+```{r child="section_rank.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r child="section_maingraph.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```

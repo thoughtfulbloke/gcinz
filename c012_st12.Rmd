@@ -1,0 +1,74 @@
+```{r config, child="section_config.Rmd", message=FALSE, warning=FALSE, echo=FALSE}
+```
+
+```{r custom, echo=FALSE}
+var_code <- "st12"
+var_meta <- metagci11[metagci11$code == var_code,]
+var_prettynom <- var_meta[,2]
+var_sides <- 5
+var_cciso <- "NZL"
+var_highlight <- "New Zealand"
+```
+
+## `r paste(var_meta[,2], var_meta[,1])`
+
+**From Good Country Source Descriptions**:
+
+**Description**: `r var_meta[,4]`
+
+**Source**: `r var_meta[,5]`
+
+**Treatment**: `r var_meta[,6]`
+
+**Neighbouring Countries**:
+
+```{r ranking, child="section_rank.Rmd", echo=FALSE}
+```
+
+`r neighbours`
+
+
+```{r maingraph, child="section_maingraph.Rmd", dpi=270, width=7, height=5, echo=FALSE}
+```
+
+**My Interpretation and Opinions**:
+
+For Journal Exports, the relation to wealth of inhabitants is that wealthy countries do not have poor journals exports index numbers, while it is still possible for poor countries to have a high journal exports number. This index is reinforcing the upper right emptiness of the overall pattern.
+
+New Zealand's place is within a group we may not normally consider- better than Malaysia and Japan and worse than Lebanon and Turkey, and would seem that NEw Zealand could improve its place dramtically as it is so low in regards to the wealth of the inhabitants. This made me wonder if there was another significant factor that was causing the adjustment by size of the country's GDP to be overly strong as the initial measure is related to things not connected to GDP.
+
+Since journal exports ties to journal production, and journal production ties to the cummulative size of academia (since it is harder to establish a new journal if a journal on the subject already exists) I decided to test the GCI index for this measure against a convienient measure of cummulative academic history.
+
+On the principle of "some information that is easy to get that seems related", I compared the GCI journal exports rank to the age of the oldest Univeristy in that Country, sourced from Wikipedia, as a quick comparison.
+
+```{r unigraph, dpi=270, width=7, height=5, echo=FALSE}
+unis <- read_feather("processed_data/unis.feather")
+gci <- gci11[,c("isoCode",var_code)]
+names(gci) <- c("isocode","gci_rank")
+axtitle <- paste("Univeristy foundings and", trimws(var_prettynom), "Good Country Rank")
+gci %>%
+  inner_join(unis, by="isocode") %>%
+  filter(!is.na(yr) & gci_rank != 0) %>% 
+  mutate(country = ifelse(isocode == var_cciso, var_highlight, "other")) %>%
+  ggplot(aes(x=yr, y=gci_rank, colour=country, shape=country)) + geom_point() + xlab("Foundation year of country's oldest university") +
+  ylab("Good Country Rank") + theme_minimal() + scale_color_viridis(discrete=TRUE, begin=0, end=0.9) +
+  ggtitle(axtitle)
+
+```
+
+There does seem to division between countries with pre- and post- 1800 universities. Very few "old" countries are outside of best 25% of the index, while "young" university  countries are centred on a "worse" point in the distribution. This suggest that cummulative advantages of history (which can't easily be changed) is playing a role here, and while New Zealand can improve, it will be harder to do so than just the GCI index alone might cause one to think.
+
+```{r child="section_config.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r custom, eval=FALSE, echo=TRUE}
+```
+
+```{r child="section_rank.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r child="section_maingraph.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r unigraph, eval=FALSE, echo=TRUE}
+```

@@ -1,0 +1,41 @@
+```{r config, child="section_config.Rmd", message=FALSE, warning=FALSE, echo=FALSE}
+```
+
+```{r custom, echo=FALSE}
+var_code <- "d_InternationalPeaceSecurity"
+var_prettynom <- "International Peace & Security"
+var_sides <- 5
+var_cciso <- "NZL"
+var_highlight <- "New Zealand"
+```
+
+# `r var_prettynom` - Aggregate Score
+
+**Neighbouring Countries**:
+
+```{r ranking, child="section_rank.Rmd", echo=FALSE}
+```
+
+`r neighbours`
+
+
+```{r maingraph, child="section_maingraph.Rmd", dpi=270, width=7, height=5, echo=FALSE}
+```
+
+**My Interpretation and Opinions**:
+
+The aggregated International Peace & Security score shows a general reduction in GCI rank range with increasing GDP per capita.
+
+For the overall rank, New Zealand is in a high 20s to low 30s group, better than countries such as Canada and Australia while worse than countries such as Romania and India. Compared to contries of similar wealth, New Zealand is among the best countries.
+
+```{r child="section_config.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r custom, eval=FALSE, echo=TRUE}
+```
+
+```{r child="section_rank.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r child="section_maingraph.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```

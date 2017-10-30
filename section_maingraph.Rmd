@@ -1,0 +1,12 @@
+```{r}
+  gci <- gci11[,c("isoCode",var_code)]
+  names(gci) <- c("isoCode","gci_rank")
+  axtitle <- paste("GDP per capita and\n", trimws(var_prettynom), "Good Country Rank")
+  gci %>%
+    inner_join(gdpcap11, by=c("isoCode" = "Country.Code")) %>%
+    filter(!is.na(X2011) & gci_rank != 0) %>% 
+    mutate(country = ifelse(isoCode == var_cciso, var_highlight, "other")) %>%
+    ggplot(aes(x=X2011, y=gci_rank, colour=country, shape=country)) + geom_point() + xlab("GDP per capita 2011") +
+    ylab("Good Country Rank") + theme_minimal() + scale_color_viridis(discrete=TRUE, begin=0, end=0.9) +
+    ggtitle(axtitle)
+```

@@ -1,0 +1,55 @@
+```{r config, child="section_config.Rmd", message=FALSE, warning=FALSE, echo=FALSE}
+```
+
+```{r custom, echo=FALSE}
+var_code <- "pe63"
+var_meta <- metagci11[metagci11$code == var_code,]
+var_prettynom <- var_meta[,2]
+var_sides <- 5
+var_cciso <- "NZL"
+var_highlight <- "New Zealand"
+```
+
+## `r paste(var_meta[,2], var_meta[,1])`
+
+**From Good Country Source Descriptions**:
+
+**Description**: `r var_meta[,4]`
+
+**Source**: `r var_meta[,5]`
+
+**Treatment**: `r var_meta[,6]`
+
+**Neighbouring Countries**:
+
+```{r ranking, child="section_rank.Rmd", echo=FALSE}
+```
+
+`r neighbours`
+
+
+```{r maingraph, child="section_maingraph.Rmd", dpi=270, width=7, height=5, echo=FALSE}
+```
+
+**My Interpretation and Opinions**:
+
+The Fairtrade market size indicator is sensitive to GDP per capita in both an obvious and non-obvious way.
+
+Mid range to wealthy countries dominate the best rankings, marking a clear division with lower wealth countries.
+
+Less obviously, but just as important, only a small number of countries have a fair trade sector reported, and the presence of countries in the data is heavily weighted to wealthier countries. This creates a non response bias, giving the scores a very different rank to what they would have if there was a more complete data set.
+
+New Zealand is in the top 10, but this is not a particularly good achievement in relation to the limited set of data present. The easiest way of improving New Zealand's rank in this area would be to include more countries.
+
+
+```{r child="section_config.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r custom, eval=FALSE, echo=TRUE}
+```
+
+```{r child="section_rank.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r child="section_maingraph.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```

@@ -1,0 +1,50 @@
+```{r config, child="section_config.Rmd", message=FALSE, warning=FALSE, echo=FALSE}
+```
+
+```{r custom, echo=FALSE}
+var_code <- "pc54"
+var_meta <- metagci11[metagci11$code == var_code,]
+var_prettynom <- var_meta[,2]
+var_sides <- 5
+var_cciso <- "NZL"
+var_highlight <- "New Zealand"
+```
+
+## `r paste(var_meta[,2], var_meta[,1])`
+
+**From Good Country Source Descriptions**:
+
+**Description**: `r var_meta[,4]`
+
+**Source**: `r var_meta[,5]`
+
+**Treatment**: `r var_meta[,6]`
+
+**Neighbouring Countries**:
+
+```{r ranking, child="section_rank.Rmd", echo=FALSE}
+```
+
+`r neighbours`
+
+
+```{r maingraph, child="section_maingraph.Rmd", dpi=270, width=7, height=5, echo=FALSE}
+```
+
+**My Interpretation and Opinions**:
+
+CO2 emissions relative (relative to size of economy) forms a very complicated relationship via what I suspect is a relationship between energy sources and wealth of country.
+
+While New Zealand has a moderately good rank, it also has a very good rank for countries in its wealth range. This suggests there is not a lot of improvement New Zealand can easily do.
+
+```{r child="section_config.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r custom, eval=FALSE, echo=TRUE}
+```
+
+```{r child="section_rank.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r child="section_maingraph.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```

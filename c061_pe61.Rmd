@@ -1,0 +1,59 @@
+```{r config, child="section_config.Rmd", message=FALSE, warning=FALSE, echo=FALSE}
+```
+
+```{r custom, echo=FALSE}
+var_code <- "pe61"
+var_meta <- metagci11[metagci11$code == var_code,]
+var_prettynom <- var_meta[,2]
+var_sides <- 5
+var_cciso <- "NZL"
+var_highlight <- "New Zealand"
+```
+
+## `r paste(var_meta[,2], var_meta[,1])`
+
+**From Good Country Source Descriptions**:
+
+**Description**: `r var_meta[,4]`
+
+**Source**: `r var_meta[,5]`
+
+**Treatment**: `r var_meta[,6]`
+
+**Neighbouring Countries**:
+
+```{r ranking, child="section_rank.Rmd", echo=FALSE}
+```
+
+`r neighbours`
+
+
+```{r maingraph, child="section_maingraph.Rmd", dpi=270, width=7, height=5, echo=FALSE}
+```
+
+**My Interpretation and Opinions**:
+
+The Open trading category is sensitive to GDP per capita, showing a curve similar to many other measures.
+
+New Zealand is reasonable overall and in the mid range of countries near it in wealth.
+
+Which just seems wrong.
+
+Any New Zealander aware of national measurements knows that everyone who rates the openness of the economy has rated New Zealand in the best three countries for every year in the past few decades. Indeed, the overall summary figure of the original source rates New Zealand in the top three for every year.
+
+The cause of the measure is that the specific attribute being used is the "Trading Across Borders" score, which is a measure made up of the paperwork, time, and cost, of shipping goods by sea. As New Zealand is at the fringes of the world's shipping networks shipping is expensive and cargo is aggregated to ship (making it slower to get on a ship) compared to locations more central to the world's transort networks.
+
+With two of the three subcomponents of the measure being based on geographic location, there is nothing New Zealand can do to improve its rank in this area.
+
+
+```{r child="section_config.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r custom, eval=FALSE, echo=TRUE}
+```
+
+```{r child="section_rank.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r child="section_maingraph.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```

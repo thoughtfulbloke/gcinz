@@ -1,0 +1,50 @@
+```{r config, child="section_config.Rmd", message=FALSE, warning=FALSE, echo=FALSE}
+```
+
+```{r custom, echo=FALSE}
+var_code <- "cu21"
+var_meta <- metagci11[metagci11$code == var_code,]
+var_prettynom <- var_meta[,2]
+var_sides <- 5
+var_cciso <- "NZL"
+var_highlight <- "New Zealand"
+```
+
+## `r paste(var_meta[,2], var_meta[,1])`
+
+**From Good Country Source Descriptions**:
+
+**Description**: `r var_meta[,4]`
+
+**Source**: `r var_meta[,5]`
+
+**Treatment**: `r var_meta[,6]`
+
+**Neighbouring Countries**:
+
+```{r ranking, child="section_rank.Rmd", echo=FALSE}
+```
+
+`r neighbours`
+
+
+```{r maingraph, child="section_maingraph.Rmd", dpi=270, width=7, height=5, echo=FALSE}
+```
+
+**My Interpretation and Opinions**:
+
+Creative Goods Exports is very weakly related to wealth, as the best 25% and worst 25% of countries by GCI rank have very different distributions of wealth. New Zealand is towards the worse end in relation to wealth (and this is a measure we are in the lower half of in raw scores). New Zealand is better than Japan or Chile and worse than Luxembourg or Bangladesh.
+
+I couldn't quickly track down raw country numbers to explore in more detail, but my concern with export figures is that for New Zealand it might be reflecting "Tyrany of Distance" effects of the difficulty of exporting things from New Zealand to the rest of the world. If this is the case (and I do not know either way at the moment) then it is a physical feature of our location and harder for us as a nation to do anything about it.
+
+```{r child="section_config.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r custom, eval=FALSE, echo=TRUE}
+```
+
+```{r child="section_rank.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r child="section_maingraph.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```

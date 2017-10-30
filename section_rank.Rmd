@@ -1,0 +1,9 @@
+```{r}
+nznear <- gci11[,c("Country.Name", "isoCode", var_code)]
+names(nznear) <- c("Country", "isoCode", "Rank")
+nznear <- nznear %>% filter(Rank != 0) %>% arrange(desc(Rank))
+nzloc <- which(nznear$isoCode == var_cciso)
+above <- ifelse(nzloc - var_sides < 1, 1, nzloc - var_sides )
+below <- ifelse(nzloc + var_sides > nrow(nznear), nrow(nznear), nzloc + var_sides )
+neighbours <- paste(c("(worse)", nznear$Country[above:below], "(better)"),collapse=", ")
+```

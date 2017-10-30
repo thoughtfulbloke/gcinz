@@ -1,0 +1,42 @@
+```{r config, child="section_config.Rmd", message=FALSE, warning=FALSE, echo=FALSE}
+```
+
+```{r custom, echo=FALSE}
+var_code <- "hw75"
+var_meta <- metagci11[metagci11$code == var_code,]
+var_prettynom <- var_meta[,2]
+var_sides <- 5
+var_cciso <- "NZL"
+var_highlight <- "New Zealand"
+```
+
+# Change between V1.0 and V1.1
+
+```{r previous, echo=FALSE}
+gci10 <- read_feather("processed_data/gci10.feather")
+gci11b <- gci11 %>% select(isoCode:hw75) %>% select(-version) %>%
+  gather(measure, value, st11:hw75) %>% filter(value != 0) %>%
+  arrange(measure, value) %>% group_by(measure) %>% mutate(v1.1rank = row_number()) %>%
+  ungroup() %>% filter(isoCode == "NZL") %>% select(measure, v1.1rank)
+
+gci10b <- gci10 %>% select(isoCode:hw75) %>% select(-version) %>%
+  gather(measure, value, st11:hw75) %>% filter(value != 0) %>%
+  arrange(measure, value) %>% group_by(measure) %>% mutate(v1.0rank = row_number()) %>%
+  ungroup() %>% filter(isoCode == "NZL") %>% select(measure, v1.0rank)
+
+gci10b %>% inner_join(gci11b) %>% kable()
+```
+
+
+
+```{r child="section_config.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r custom, eval=FALSE, echo=TRUE}
+```
+
+```{r child="section_rank.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r child="section_maingraph.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```

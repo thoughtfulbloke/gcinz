@@ -1,0 +1,51 @@
+```{r config, child="section_config.Rmd", message=FALSE, warning=FALSE, echo=FALSE}
+```
+
+```{r custom, echo=FALSE}
+var_code <- "st11"
+var_meta <- metagci11[metagci11$code == var_code,]
+var_prettynom <- var_meta[,2]
+var_sides <- 5
+var_cciso <- "NZL"
+var_highlight <- "New Zealand"
+```
+
+## `r paste(var_meta[,2], var_meta[,1])`
+
+**From Good Country Source Descriptions**:
+
+**Description**: `r var_meta[,4]`
+
+**Source**: `r var_meta[,5]`
+
+**Treatment**: `r var_meta[,6]`
+
+**Neighbouring Countries**:
+
+```{r ranking, child="section_rank.Rmd", echo=FALSE}
+```
+
+`r neighbours`
+
+
+```{r maingraph, child="section_maingraph.Rmd", dpi=270, width=7, height=5, echo=FALSE}
+```
+
+**My Interpretation and Opinions**:
+
+Considering country wealth with number of international students, there does seem to be a relationship. The range of the international student measure narrows as the wealth of the country increases. We can say New Zealand has a nearly maximal rank in receiving International Students given the wealth of the inhabitants, so whatever the associated factors, as we are nearly at maximum it would seem to be hard to increase compared to being a worse rank. 
+Without considering wealth, the kind of countries we are grouped with (better than Malaysia and Ukraine, worse than Burundi and Yemen) are not countries we normal fall into a group with. To me this suggests that the index measure is bringing out factors not normally considered.
+
+Things that would potential improve New Zealand's rank in this area are increasing the number of international students (which the data suggests would be difficult) or decreasing the country's GDP (which would have negative consequences), so this is not a measure I would strive to change too much.
+
+```{r child="section_config.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r custom, eval=FALSE, echo=TRUE}
+```
+
+```{r child="section_rank.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r child="section_maingraph.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```

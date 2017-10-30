@@ -1,0 +1,56 @@
+```{r config, child="section_config.Rmd", message=FALSE, warning=FALSE, echo=FALSE}
+```
+
+```{r custom, echo=FALSE}
+var_code <- "ps33"
+var_meta <- metagci11[metagci11$code == var_code,]
+var_prettynom <- var_meta[,2]
+var_sides <- 5
+var_cciso <- "NZL"
+var_highlight <- "New Zealand"
+```
+
+## `r paste(var_meta[,2], var_meta[,1])`
+
+**From Good Country Source Descriptions**:
+
+**Description**: `r var_meta[,4]`
+
+**Source**: `r var_meta[,5]`
+
+**Treatment**: `r var_meta[,6]`
+
+**Neighbouring Countries**:
+
+```{r ranking, child="section_rank.Rmd", echo=FALSE}
+```
+
+`r neighbours`
+
+
+```{r maingraph, child="section_maingraph.Rmd", dpi=270, width=7, height=5, echo=FALSE}
+```
+
+**My Interpretation and Opinions**:
+
+
+Violent conflict (relative to size of economy) shows a clear pattern that among countries that have engaged in violent conflict, countries of poorer people have a worse rank. Due to the normalisation by size of economy, the Nez Zealand finds itself in is not a group we would normally think of ourselves as equivalent to.
+
+In particular, New Zealands ranking in the worst 20% of countries causing casualties may strongly conflict with New Zealander's self perceptions, so I think it is worth stressing how this measure is calculated. The number of casualties in a country is divided among countries with forces present in that country (then that number is divided by the GDP of the country). So New Zealand's rank is the result of having troops in Afghanistan in 2011, and then among those with troops present a ranking on the size of our economy. This measure is a measure of presence in a war zone (reflecting the number of casualties), not the actions of a country's troops within that war zone.
+
+The only way for New Zealand to improve our rank here is stop being part of alliances, even if we are only sending troops to do reconstruction work. 
+
+Note: the original source data has shifted to http://ucdp.uu.se/#
+
+
+```{r child="section_config.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r custom, eval=FALSE, echo=TRUE}
+```
+
+```{r child="section_rank.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r child="section_maingraph.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```

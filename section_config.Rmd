@@ -1,0 +1,11 @@
+```{r, message=FALSE, warning=FALSE}
+library(feather)
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(ggplot2)
+library(viridis)
+gci11 <- read_feather("processed_data/gci11.feather")
+metagci11 <- read_feather("processed_data/gci11meta.feather")
+gdpcap11 <- read_feather("processed_data/gdpcap11.feather")
+```

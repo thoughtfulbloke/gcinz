@@ -1,0 +1,56 @@
+```{r config, child="section_config.Rmd", message=FALSE, warning=FALSE, echo=FALSE}
+```
+
+```{r custom, echo=FALSE}
+var_code <- "st14"
+var_meta <- metagci11[metagci11$code == var_code,]
+var_prettynom <- var_meta[,2]
+var_sides <- 5
+var_cciso <- "NZL"
+var_highlight <- "New Zealand"
+```
+
+## `r paste(var_meta[,2], var_meta[,1])`
+
+**From Good Country Source Descriptions**:
+
+**Description**: `r var_meta[,4]`
+
+**Source**: `r var_meta[,5]`
+
+**Treatment**: `r var_meta[,6]`
+
+**Neighbouring Countries**:
+
+```{r ranking, child="section_rank.Rmd", echo=FALSE}
+```
+
+`r neighbours`
+
+
+```{r maingraph, child="section_maingraph.Rmd", dpi=270, width=7, height=5, echo=FALSE}
+```
+
+**My Interpretation and Opinions**:
+
+
+Either you are a country that has won one or more nobel prizes over time, or you are not (and the ties amoung the not winners are resolved by their ranks in other measures).
+
+As New Zealand has won prizes, it falls into a group better than Romania or Belgium and worse than France or the United States.
+
+Based on the graph, there is a weak (binary) relationship to wealth of the inhabitants (as wealthy countries are less likely not to have won a nobel prize), but little relationship within those countries that have one at least one prize.
+
+While the graph suggests that New Zealand could improve its ranking, keep in mind that it is cummulative Nobel Prizes to the Index year (in this case 2011), and it is very difficult to make ourselves a European country in the early years of the twentieth century. So, a bit like the Journal Exports there is a historical weight to this measure. As getting a Nobel Prize is a very infrequent event for most countries, it would be easier to raise our rank by making the economy worse and lowering the country's GDP, as this doesn't change the Nobel Prizes won to date. I am not advocating this strategy. In truth, I am just suggesting this is not a measure that actions of NEw Zealand can change much.
+
+
+```{r child="section_config.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r custom, eval=FALSE, echo=TRUE}
+```
+
+```{r child="section_rank.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r child="section_maingraph.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```

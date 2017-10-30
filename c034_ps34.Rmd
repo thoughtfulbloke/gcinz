@@ -1,0 +1,52 @@
+```{r config, child="section_config.Rmd", message=FALSE, warning=FALSE, echo=FALSE}
+```
+
+```{r custom, echo=FALSE}
+var_code <- "ps34"
+var_meta <- metagci11[metagci11$code == var_code,]
+var_prettynom <- var_meta[,2]
+var_sides <- 5
+var_cciso <- "NZL"
+var_highlight <- "New Zealand"
+```
+
+## `r paste(var_meta[,2], var_meta[,1])`
+
+**From Good Country Source Descriptions**:
+
+**Description**: `r var_meta[,4]`
+
+**Source**: `r var_meta[,5]`
+
+**Treatment**: `r var_meta[,6]`
+
+**Neighbouring Countries**:
+
+```{r ranking, child="section_rank.Rmd", echo=FALSE}
+```
+
+`r neighbours`
+
+
+```{r maingraph, child="section_maingraph.Rmd", dpi=270, width=7, height=5, echo=FALSE}
+```
+
+**My Interpretation and Opinions**:
+
+For Arms (Arms and ammunition; parts and accessories thereof) exports by the size of the economy, there is a clear relationship with GDP per capita. The higher the GDP per capita, the more arms and compents sales your county makes, producing a limit on maximal rank the reverse of most other indicators.
+
+For its GDP per capita, New Zealand is contributing a relatively low level of arms and components to the world. Checking the orginal data, the exported 4.4 million USD in arms and components in 2011 more than half is made up of sales to the Australia and Canada. I also checked imports, out of interest, and New Zealand imported 5.3 million USD of Arms and ammunition; parts and accessories thereof, so I am wondering how much of the 4.4 million was just passing through.
+
+If it is pass through, and more arms are coming in than going out, New Zealands rank is an artifact of the data. If it is not pass through there is room for improvement. The degree to which it is pass through is something that could be analysed.
+
+```{r child="section_config.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r custom, eval=FALSE, echo=TRUE}
+```
+
+```{r child="section_rank.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r child="section_maingraph.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```

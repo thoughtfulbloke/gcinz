@@ -1,0 +1,42 @@
+```{r config, child="section_config.Rmd", message=FALSE, warning=FALSE, echo=FALSE}
+```
+
+```{r custom, echo=FALSE}
+var_code <- "c_Culture"
+var_prettynom <- "Culture"
+var_sides <- 5
+var_cciso <- "NZL"
+var_highlight <- "New Zealand"
+```
+
+# `r var_prettynom` - Aggregate Score
+
+**Neighbouring Countries**:
+
+```{r ranking, child="section_rank.Rmd", echo=FALSE}
+```
+
+`r neighbours`
+
+
+```{r maingraph, child="section_maingraph.Rmd", dpi=270, width=7, height=5, echo=FALSE}
+```
+
+**My Interpretation and Opinions**:
+
+The same pattern of rank being associated with wealth of inhabitants that was observed with the Science aggregate category can be seen in the Culture category. Most of my thoughts about the overall distribution match my comments for Science, including wondering if number of Arts graduates per population would provide a useful current proxy measure of contributions to world culture.
+
+New Zealand's ranking, better than Korea and Bulgaria while worse than Romania and Italy seems in the right general area as my self image of my country. The more specific rank in relation to the wealth of inhabitants seems lower than my self image though.
+
+
+```{r child="section_config.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r custom, eval=FALSE, echo=TRUE}
+```
+
+```{r child="section_rank.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
+
+```{r child="section_maingraph.Rmd", eval=TRUE, echo=TRUE, results = "hide", fig.keep="none"}
+```
